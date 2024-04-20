@@ -30,9 +30,50 @@ if __name__ == "__main__":
     say("Hello Sir, I am Jarvis. How can I help you today?")
     while True:
         print("Listening Sir...")
-        query=takeCommand() #ruuning takeCommand function
-        if "Open Youtube".lower() in query.lower():
-            say("Opening youtube Sir")
-            webbrowser.open("https://www.youtube.com/")
-            
+        query=takeCommand() # running takeCommand function
+        sites = [
+            ["youtube", "https://youtube.com"],
+            ["google", "https://google.com"],
+            ["instagram", "https://instagram.com"],
+            ["facebook", "https://facebook.com"],
+            ["linkedin", "https://linkedin.com"],
+            ["twitter", "https://twitter.com"],
+            ["whatsapp", "https://web.whatsapp.com"],
+            ["github", "https://github.com"],
+            ["stackoverflow", "https://stackoverflow.com"],
+            ["geeksforgeeks", "https://geeksforgeeks.com"],
+            ["hackerrank", "https://hackerrank.com"],
+            ["codechef", "https://codechef.com"],
+            ["leetcode", "https://leetcode.com"],
+            ["codeforces", "https://codeforces.com"],
+            ["amazon", "https://amazon.com"],
+            ["flipkart", "https://flipkart.com"],
+            ["myntra", "https://myntra.com"],
+            ["quora", "https://quora.com"],
+            ["coursera", "https://coursera.com"],
+            ["edx", "https://edx.com"],
+            ["myntra", "https://myntra.com"],
+            ["ebay", "https://ebay.com"],
+            ["udemy", "https://udemy.com"]
+        ]
+        for site in sites:
+            if f"{site[0]}".lower() in query.lower():
+                say(f"Opening {site[0]} Sir")
+                webbrowser.open(site[1])
+        
+        if "play playlist".lower() in query.lower():
+            say("Opening Your Favourite Song Sir and playlist of Eminem for you on Youtube")
+            webbrowser.open("https://www.youtube.com/watch?v=_WYO5EGTY-o&list=PL7E436F1EC114B001&index=11")
+
+        if "play song" in query:
+            musicpath="C:Users/ADITI-PC/Downloads/Without-Me---Eminem(musicdownload.cc).mp3"
+            say("Starting Song Sir")
+            os.startfile(musicpath)
+                
+
+
         say(query)
+
+        
+      
+       
